@@ -1,0 +1,38 @@
+alias dockershell='docker run -it --rm -v `pwd`:/data --workdir /data busybox'
+alias ho='displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1440x900 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:86283A91-53CE-444C-97C7-371A8371E87F res:2560x1440 hz:60 color_depth:8 scaling:off origin:(-573,-1440) degree:0" "id:3ADFC42B-F9AE-446E-8BE4-99122728CF05 res:1920x1080 hz:60 color_depth:4 scaling:off origin:(1987,-658) degree:0"'
+alias mirror='displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230+86283A91-53CE-444C-97C7-371A8371E87F+3ADFC42B-F9AE-446E-8BE4-99122728CF05 res:1440x900 hz:60 col'
+alias buero='displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1440x900 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:572DFC23-A97F-4BAD-9F2B-6EB857E25F6B res:1920x1080 hz:60 color_depth:8 scaling:off origin:(-276,-1080) degree:0" "id:8B42D128-326D-4646-BE8E-AAB1153297BC res:1920x1080 hz:60 color_depth:4 scaling:off origin:(1644,-680) degree:0"'
+
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# mv, rm, cp
+alias mv='mv -v'
+alias cp='cp -v'
+
+alias chmox='chmod +x'
+
+# always use color, even when piping (to awk,grep,etc)
+if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+export CLICOLOR_FORCE=1
+
+# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+alias ls='gls -AFh ${colorflag} --group-directories-first'
+
+alias ld='ls -l | grep "^d"' # only directories
+alias ll='exa -hlg --git'
+alias la='ls -A'
+alias l='ls -CF'
+
+###
+
+
+# `cat` with beautiful colors. requires: sudo easy_install -U Pygments
+# alias c='pygmentize -O style=monokai -f console256 -g'
+
