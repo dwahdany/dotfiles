@@ -191,6 +191,7 @@
                     };
                     extraConfig = {
                       core.editor = "vim";
+                      pull.rebase = "true";
                     };
                   };
                   home.sessionVariables = {
@@ -356,6 +357,7 @@
                         hostname = "49.12.15.250";
                         user = "root";
                       };
+
                     };
                   };
 
