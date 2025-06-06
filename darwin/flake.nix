@@ -155,7 +155,11 @@
                     nodejs_20
                     rclone
                     gh
+
+                    #nix stuff
                     duti
+                    nixd
+                    nil
 
                     # python
                     python3
