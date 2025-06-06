@@ -405,6 +405,7 @@
                   "monodraw"
 
                   # dev tools
+                  "cursor"
                   "zed"
 
                   # comms
